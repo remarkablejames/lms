@@ -1,8 +1,14 @@
 import React from 'react';
+import {Button} from "@/components/ui/button";
+import Link from "next/link";
 
 function Page() {
     return (
-        <div>Course page</div>
+        <div className="p-6">
+            <Link href="/teacher/create">
+                <Button>New Course</Button>
+            </Link>
+        </div>
     );
 }
 
