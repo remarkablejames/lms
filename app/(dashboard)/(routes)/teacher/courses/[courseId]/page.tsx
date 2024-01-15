@@ -4,6 +4,7 @@ import {auth} from "@clerk/nextjs";
 import {redirect} from "next/navigation";
 import {IconBadge} from "@/components/icon-badge";
 import {LayoutDashboard} from "lucide-react";
+import TitleForm from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/title-form";
 
 async function Page({params}: { params: { courseId: string } }) {
     const {userId} = auth()
@@ -50,6 +51,9 @@ async function Page({params}: { params: { courseId: string } }) {
                             Customize your course
                         </h1>
                     </div>
+                    <TitleForm initalData={course}
+                               courseId={course.id}
+                    />
                 </div>
 
             </div>
