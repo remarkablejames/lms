@@ -5,6 +5,7 @@ import {redirect} from "next/navigation";
 import {IconBadge} from "@/components/icon-badge";
 import {LayoutDashboard} from "lucide-react";
 import TitleForm from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/title-form";
+import DescriptionForm from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/description-form";
 
 async function Page({params}: { params: { courseId: string } }) {
     const {userId} = auth()
@@ -51,8 +52,11 @@ async function Page({params}: { params: { courseId: string } }) {
                             Customize your course
                         </h1>
                     </div>
-                    <TitleForm initalData={course}
+                    <TitleForm initialData={course}
                                courseId={course.id}
+                    />
+                    <DescriptionForm initialData={course}
+                                     courseId={course.id}
                     />
                 </div>
 
